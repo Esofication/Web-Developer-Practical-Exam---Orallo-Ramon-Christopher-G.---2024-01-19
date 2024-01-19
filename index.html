@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>New Paint Job</title>
+</head>
+<body>
+    <div class="container">
+        <h1>New Paint Job</h1>
+
+        <img id="carImage" src="Images/AutoPaintExam.jpg" alt="Auto Paint Exam Image">
+
+        <form id="paintJobForm" onsubmit="submitForm(event)">
+            <label for="carDetails"><strong>Car Details:</strong></label>
+            <br>
+            <div class="form-group">
+                <label for="plateNo">Plate No.</label>
+                <input type="text" id="plateNo" name="plateNo" placeholder="" required>
+            </div>
+
+            <div class="form-group">
+                <label for="currentColor">Current Color</label>
+                <select id="currentColor" name="currentColor" required>
+                    <option value="" selected disabled></option>
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="targetColor">Target Color</label>
+                <select id="targetColor" name="targetColor" required>
+                    <option value="" selected disabled></option>
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                </select>
+            </div>
+
+            <!-- Remove the nested form -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Paint Jobs</h2>
+
+        <h3>Paint Jobs in Progress</h3>
+        <table id="paintJobsTableWithAction" style="width:100%">
+            <!-- Your table headers go here -->
+            <thead>
+                <tr>
+                    <th>Plate No</th>
+                    <th>Current Color</th>
+                    <th>Target Color</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <!-- Your table body goes here -->
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <!-- Table for Paint Jobs without Action column -->
+        <h3>Paint Queue</h3>
+        <table id="paintJobsTableWithoutAction" style="width:100%">
+            <!-- Your table headers go here -->
+            <thead>
+                <tr>
+                    <th>Plate No</th>
+                    <th>Current Color</th>
+                    <th>Target Color</th>
+                </tr>
+            </thead>
+            <!-- Your table body goes here -->
+            <tbody>
+                <!-- Table content will be populated through AJAX -->
+            </tbody>
+        </table>
+
+        <!-- "SHOP PERFORMANCE" Container -->
+        <div id="shopPerformanceContainer">
+            <div id="headerWrapper">
+                <h4>SHOP PERFORMANCE</h4>
+            </div>
+            <div id="colorBreakdownContainer">
+                <div id="colorBreakdown">
+                    <p>Total Cars Painted: </p>
+                    <p>Breakdown:</p>
+                    <ul>
+                        <li><span>Blue:</span></li>
+                        <li><span>Red:</span></li>
+                        <li><span>Green:</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
